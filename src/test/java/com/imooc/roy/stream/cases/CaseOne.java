@@ -102,9 +102,7 @@ public class CaseOne {
         List<String> studentList = new ArrayList<>();
         studentMap.forEach((key,value)->{
             List<String> collect = value.stream()
-                    .filter(examStudentScore -> {
-                        return examStudentScore.getScoreValue() == null;
-                    })
+                    .filter(examStudentScore -> examStudentScore.getScoreValue() == null)
                     .map(ExamStudentScore::getStudentName)
                     .collect(Collectors.toList());
             studentList.addAll(collect);
